@@ -7,7 +7,7 @@ import {
   FileText,
 } from "@lucide/astro";
 
-const base = import.meta.env.BASE_URL;
+const urlRegistration = import.meta.env.REGISTRATION_URL;
 
 const fees = [
   {
@@ -100,7 +100,7 @@ const fees = [
     <!-- CTA Button -->
     <div class="mb-10">
       <a
-        href={`${base}/inscricoes`}
+        href={urlRegistration}
         class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold text-sm shadow-lg shadow-blue-300/40 transition-all duration-200 hover:-translate-y-0.5"
       >
         <ArrowRight class="w-4 h-4" />

@@ -1,12 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Registration from "../components/Registration.astro";
+import RegistratinoSkeleton from "../components/RegistrationSkeleton.astro";
 import SponsorsSection from "../components/SponsorsSection.astro";
 import SponsorsBar from "../components/SponsorsBar.astro";
+
+const urlRegistration = import.meta.env.REGISTRATION_URL;
 ---
 
 <Layout title="Inscrições – ECF/SBF 2026">
-  <Registration />
+  {urlRegistration && <Registration />}
+  {!urlRegistration && <RegistratinoSkeleton/>}
   <SponsorsBar />
   <SponsorsSection />
 </Layout>

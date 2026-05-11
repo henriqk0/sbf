@@ -4,18 +4,14 @@ import { Image } from "astro:assets";
 
 import conferenceImg from "../assets/image_about.png";
 
+const base = import.meta.env.BASE_URL;
+
 const highlights = [
   {
     icon: BookOpen,
     title: "Palestras Científicas",
     description:
       "Palestras de alto nível com pesquisadores renomados nas diversas áreas da física.",
-  },
-  {
-    icon: FlaskConical,
-    title: "Minicursos Práticos",
-    description:
-      "Minicursos práticos abordando temas de física experimental e computacional.",
   },
   {
     icon: Network,
@@ -99,20 +95,24 @@ const highlights = [
       </div>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {
         highlights.map((item) => (
-          <div class="p-5 bg-white border border-slate-200 rounded-lg hover:border-slate-300 transition-colors">
-            <div class="w-11 h-11 rounded-lg bg-blue-600 flex items-center justify-center mb-3">
-              <item.icon class="w-5 h-5 text-white" />
+          <a
+            href={`${base}/cronograma`}
+          >
+            <div class="p-5 bg-white border border-slate-200 rounded-lg hover:border-slate-300 transition-colors">
+              <div class="w-11 h-11 rounded-lg bg-blue-600 flex items-center justify-center mb-3">
+                <item.icon class="w-5 h-5 text-white" />
+              </div>
+              <h3 class="text-slate-900 font-semibold mb-2 text-sm">
+                {item.title}
+              </h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                {item.description}
+              </p>
             </div>
-            <h3 class="text-slate-900 font-semibold mb-2 text-sm">
-              {item.title}
-            </h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
-              {item.description}
-            </p>
-          </div>
+          </a>
         ))
       }
     </div>
