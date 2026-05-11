@@ -81,15 +81,12 @@ Além da landing page, o projeto deve acompanhar informações essenciais para a
 - Regras de inscrição, submissão e certificação, se aplicável.
 - Plano de divulgação até o evento.
 - Rotina de atualização do site após o lançamento do MVP.
-- Pesquisa e implementação de ferramenta de tickets para suporte aos usuários do site.
 
 ## Perguntas Abertas
 
-- Qual é o nome oficial completo do evento?
-- Quais são as datas e horários confirmados em setembro de 2026?
-- Qual será a ação principal da landing page: inscrição, submissão, programação ou contato?
+- Como será feito o pagamento e recebimento das incrições?
 - Existe identidade visual oficial?
-- Há palestrantes, minicursos, oficinas ou atividades confirmadas?
+- Há minicursos, oficinas ou atividades semelhantes confirmadas?
 - Qual canal oficial de contato deve aparecer na página?
 - O canal Slack do projeto já foi criado como `SBF`; falta decidir se será canal interno ou também canal com clientes.
 - Quem são os clientes/stakeholders que precisam validar o site?
