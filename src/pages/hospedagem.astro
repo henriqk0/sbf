@@ -53,10 +53,10 @@ const accommodations = [
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-2 gap-6 mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
         {
           accommodations.map((acc) => (
-            <div class="bg-white border border-slate-200 rounded-lg p-6">
+            <div class="bg-white border border-slate-200 rounded-lg p-6 w-full">
               <h3 class="text-slate-900 font-semibold mb-3">{acc.name}</h3>
 
               <div class="space-y-2 text-sm">
@@ -97,7 +97,7 @@ const accommodations = [
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 00.948-.684l1.498-4.493a1 1 0 011.502-.684l1.498 4.493a1 1 0 00.948.684H17a2 2 0 012 2v2a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"
+                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
                     />
                   </svg>
                   <a
@@ -129,6 +129,14 @@ const accommodations = [
                     {acc.email}
                   </a>
                 </div>
+                <a
+                  href="https://www.google.com/maps/place/IFES+-+Campus+Serra/@-20.1976491,-40.2202422,17z/data=!3m1!4b1!4m6!3m5!1s0xb81de52407d8d7:0x289693da8d05dd09!8m2!3d-20.1976491!4d-40.2176673!16s%2Fg%2F11gyc3xq80?entry=ttu&g_ep=EgoyMDI2MDQyNi4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors text-sm"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-navigation w-4 h-4" data-fg-ywq23="7.17:7.3481:/src/app/components/Location.tsx:41:17:1940:34:e:Navigation::::::too" data-fgid-ywq23=":r3v:"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>Abrir no Google Maps
+                </a>
               </div>
             </div>
           ))
