@@ -5,40 +5,69 @@ import ifesLogo from "../assets/serra-vertical-cor.png";
 import ufesLogo from "../assets/Logo_Ufes.png";
 import govLogo from "../assets/Brasao_Governo.png";
 import sbfEsLogo from "../assets/logo-sbf-es-novo.png";
+import fapesLogo from "../assets/logo_fapes.png";
 
 const sponsors = [
-  { name: "SBF - ES", type: "Apoio Regional", image: sbfEsLogo, alt: "logo_sbf_es" },
-  { name: "Sociedade Brasileira de Física", type: "Apoio", image: sbfLogo, alt: "logo_sbf" },
-  { name: "IFES", type: "Instituição Organizadora", image: ifesLogo, alt: "logo_ifes" },
-  { name: "UFES", type: "Parceiro Institucional", image: ufesLogo, alt: "logo_ufes" },
+  {
+    name: "SBF - ES",
+    type: "Apoio Regional",
+    image: sbfEsLogo,
+    alt: "logo_sbf_es",
+  },
+  {
+    name: "IFES",
+    type: "Instituição Organizadora",
+    image: ifesLogo,
+    alt: "logo_ifes",
+  },
+  {
+    name: "UFES",
+    type: "Parceiro Institucional",
+    image: ufesLogo,
+    alt: "logo_ufes",
+  },
+  {
+    name: "Sociedade Brasileira de Física",
+    type: "Apoio",
+    image: sbfLogo,
+    alt: "logo_sbf",
+  },
   { name: "Governo do ES", type: "Apoio", image: govLogo, alt: "logo_goves" },
+  {
+    name: "FAPES",
+    type: "Apoio",
+    image: fapesLogo,
+    alt: "logo_fapes",
+  },
 ];
 ---
 
 <footer class="py-12 bg-slate-50 border-t border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    
-    <div class="text-center mb-10">
-      <h3 class="text-slate-500 text-sm font-semibold uppercase tracking-wider">
+    <div class="text-center mb-12">
+      <h2 class="text-slate-900 text-3xl font-bold mb-2">
         Parceiros e Apoiadores
-      </h3>
+      </h2>
+      <p class="text-slate-600">Organizações que tornam este evento possível</p>
     </div>
 
-    {/* Força 5 colunas fixas em qualquer tamanho de tela e centraliza o conteúdo */}
-    <div class="grid grid-cols-5 gap-4 sm:gap-8 items-center justify-items-center">
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 items-center justify-items-center"
+    >
       {
         sponsors.map((sponsor) => (
-          <div class="w-full flex justify-center" title={`${sponsor.name} - ${sponsor.type}`}>
-            {}
-            <Image 
-              src={sponsor.image} 
-              alt={sponsor.alt} 
-              class="h-auto w-full max-h-24 object-contain" 
+          <div
+            class="w-full flex justify-center p-6"
+            title={`${sponsor.name} - ${sponsor.type}`}
+          >
+            <Image
+              src={sponsor.image}
+              alt={sponsor.alt}
+              class="h-auto w-full max-h-48 object-contain"
             />
           </div>
         ))
       }
     </div>
-    
   </div>
 </footer>
