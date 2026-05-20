@@ -4,8 +4,16 @@ import sbfLogo from "../assets/Logo-SBF60-small_1.png";
 import ifesLogo from "../assets/serra-vertical-cor.png";
 import ufesLogo from "../assets/Logo_Ufes.png";
 import govLogo from "../assets/Brasao_Governo.png";
+import sbfEsLogo from "../assets/logo-sbf-es-novo.png";
 
 const sponsors = [
+  {
+    name: "SBF - ES",
+    type: "Apoio Regional",
+    color: "bg-blue-300",
+    image: sbfEsLogo,
+    alt: "logo_sbf_es",
+  },
   {
     name: "Sociedade Brasileira de Física",
     type: "Apoio",
@@ -43,18 +51,18 @@ const sponsors = [
       <h2 class="text-slate-900 text-3xl font-bold mb-2">
         Parceiros e Apoiadores
       </h2>
-      <p class="text-slate-600">Organizações que tornam este evento possível</p>
+      <p class="text-slate-600">Organizações que tornam este evento possíve</p>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
       {
         sponsors.map((sponsor) => (
-          <div class="flex flex-col items-center gap-3 p-6">
-            <Image src={sponsor.image} alt={sponsor.alt} />
+          <div class="flex flex-col items-center justify-center gap-3 p-6 bg-white rounded-xl border border-slate-200/60 shadow-sm hover:shadow-md transition-all">
+            <Image src={sponsor.image} alt={sponsor.alt} class="h-20 w-auto object-contain max-w-full" />
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider text-center mt-2">{sponsor.type}</span>
           </div>
         ))
       }
     </div>
   </div>
 </section>
-
