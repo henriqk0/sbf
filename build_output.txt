@@ -1,0 +1,30 @@
+
+> build
+> astro build
+
+18:20:58 [types] Generated 56ms
+18:20:58 [build] output: "static"
+18:20:58 [build] mode: "static"
+18:20:58 [build] directory: /home/henriq/Documents/gitProjs/forks/sbf/dist/
+18:20:58 [build] Collecting build info...
+18:20:58 [build] ✓ Completed in 79ms.
+18:20:58 [build] Building static entrypoints...
+18:20:59 [ERROR] [vite] ✗ Build failed in 681ms
+[vite:css] Failed to load PostCSS config (searchPath: /home/henriq/Documents/gitProjs/forks/sbf): [Error] Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
+Require stack:
+- /home/henriq/Documents/gitProjs/forks/sbf/postcss.config.mjs
+
+(@/home/henriq/Documents/gitProjs/forks/sbf/postcss.config.mjs)
+Error: Loading PostCSS Plugin failed: Cannot find module 'autoprefixer'
+Require stack:
+- /home/henriq/Documents/gitProjs/forks/sbf/postcss.config.mjs
+
+(@/home/henriq/Documents/gitProjs/forks/sbf/postcss.config.mjs)
+    at load (file:///home/henriq/Documents/gitProjs/forks/sbf/node_modules/astro/node_modules/vite/dist/node/chunks/config.js:7676:10)
+    at async Promise.all (index 1)
+    at async plugins (file:///home/henriq/Documents/gitProjs/forks/sbf/node_modules/astro/node_modules/vite/dist/node/chunks/config.js:7698:11)
+    at async processResult (file:///home/henriq/Documents/gitProjs/forks/sbf/node_modules/astro/node_modules/vite/dist/node/chunks/config.js:7737:13)
+file: /home/henriq/Documents/gitProjs/forks/sbf/node_modules/@fontsource/inter/300.css
+  Stack trace:
+    at load (file:///home/henriq/Documents/gitProjs/forks/sbf/node_modules/astro/node_modules/vite/dist/node/chunks/config.js:7676:10)
+    at async plugins (file:///home/henriq/Documents/gitProjs/forks/sbf/node_modules/astro/node_modules/vite/dist/node/chunks/config.js:7698:11)
