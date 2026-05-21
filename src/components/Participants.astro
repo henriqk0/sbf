@@ -1,5 +1,7 @@
 ---
 import { ExternalLink } from "@lucide/astro";
+import Avatar from "./Avatar.astro";
+import julioImg from "../assets/julio.png";
 
 interface Speaker {
   name: string;
@@ -14,10 +16,12 @@ const speakers: Speaker[] = [
   {
     name: "Antônio Varandas",
     affil: "UC, Portugal · UFES",
-    topic: "Molecules and Materials in Quantum Theory: A Green-Theoretical Perspective.",
+    topic:
+      "Molecules and Materials in Quantum Theory: A Green-Theoretical Perspective.",
     tag: "Palestra Especial",
     curriculumUrl: "http://lattes.cnpq.br/0081051823749824",
-    imageRef: "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4488311J4",
+    imageRef:
+      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4488311J4",
   },
   {
     name: "Eduardo Marino",
@@ -25,15 +29,18 @@ const speakers: Speaker[] = [
     topic: "Teoria para a Supercondutividade de Alta Temperatura em Cupratos.",
     tag: "Teoria Quântica de Campos",
     curriculumUrl: "http://lattes.cnpq.br/4256849386217726",
-    imageRef: "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4783288H8",
+    imageRef:
+      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4783288H8",
   },
   {
     name: "Geanderson Carvalho",
     affil: "UTFPR/UFES",
-    topic: "Palestra de Divulgação Científica — A complexidade molecular do cosmos.",
+    topic:
+      "Palestra de Divulgação Científica — A complexidade molecular do cosmos.",
     tag: "Divulgação Científica",
     curriculumUrl: "http://lattes.cnpq.br/1178544624232296",
-    imageRef: "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4412841Z5",
+    imageRef:
+      "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4412841Z5",
   },
   {
     name: "Giuseppe Dito",
@@ -41,7 +48,8 @@ const speakers: Speaker[] = [
     topic: "Another view on quantization.",
     tag: "Palestra Plenária",
     curriculumUrl: "http://lattes.cnpq.br/7145763051036121",
-    imageRef: "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4368892A5",
+    imageRef:
+      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4368892A5",
   },
   {
     name: "Guilherme Lima",
@@ -49,7 +57,8 @@ const speakers: Speaker[] = [
     topic: "Estrutura Eletrônica — pesquisas em física da matéria condensada.",
     tag: "Estrutura Eletrônica",
     curriculumUrl: "http://lattes.cnpq.br/5847088789120872",
-    imageRef: "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4550752E5",
+    imageRef:
+      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4550752E5",
   },
   {
     name: "Humberto Belich",
@@ -57,15 +66,18 @@ const speakers: Speaker[] = [
     topic: "Transição de Fase e ruptura de Polímeros.",
     tag: "Teoria Quântica de Campos",
     curriculumUrl: "http://lattes.cnpq.br/3879935393431243",
-    imageRef: "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4798155Z5",
+    imageRef:
+      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4798155Z5",
   },
   {
     name: "Ivã Gurgel",
     affil: "USP",
-    topic: "Ciência e Diplomacia: a postura internacionalista de Niels Bohr e o papel nas origens do CERN.",
+    topic:
+      "Ciência e Diplomacia: a postura internacionalista de Niels Bohr e o papel nas origens do CERN.",
     tag: "Ensino de Física",
     curriculumUrl: "http://lattes.cnpq.br/2315844649289135",
-    imageRef: "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4737960H7",
+    imageRef:
+      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4737960H7",
   },
   {
     name: "João Paulo Erthal",
@@ -73,12 +85,14 @@ const speakers: Speaker[] = [
     topic: "Prêmio Nobel de Física: potencialidades no ensino de Física.",
     tag: "Ensino de Física",
     curriculumUrl: "http://lattes.cnpq.br/4049290999036716",
-    imageRef: "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4777423Z6",
+    imageRef:
+      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4777423Z6",
   },
   {
     name: "Jorge Luis Gonzalez",
     affil: "UFES",
-    topic: "Uma abordagem para computação neuromórfica usando materiais quânticos.",
+    topic:
+      "Uma abordagem para computação neuromórfica usando materiais quânticos.",
     tag: "Matéria Condensada",
     curriculumUrl: "https://orcid.org/0000-0001-5841-8731",
     imageRef: "",
@@ -89,7 +103,8 @@ const speakers: Speaker[] = [
     topic: "Computação Quântica — avanços e perspectivas para o Brasil.",
     tag: "Palestra Plenária",
     curriculumUrl: "http://lattes.cnpq.br/2379169013108798",
-    imageRef: "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4723978Z8",
+    imageRef:
+      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4723978Z8",
   },
   {
     name: "Marcos Gonçalves Menezes",
@@ -97,15 +112,18 @@ const speakers: Speaker[] = [
     topic: "Impulsionando a física de Floquet com campos excitônicos.",
     tag: "Estrutura Eletrônica",
     curriculumUrl: "http://lattes.cnpq.br/5945425658332294",
-    imageRef: "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4210227Y1",
+    imageRef:
+      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4210227Y1",
   },
   {
     name: "Ronaldo Lobato",
     affil: "CBPF",
-    topic: "Uma Rede Neural Bayesiana para a Equação de Estado de Estrelas de Nêutrons.",
+    topic:
+      "Uma Rede Neural Bayesiana para a Equação de Estado de Estrelas de Nêutrons.",
     tag: "Astrofísica",
     curriculumUrl: "http://lattes.cnpq.br/6184225097118343",
-    imageRef: "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4434028A3",
+    imageRef:
+      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4434028A3",
   },
   {
     name: "Wiliam Ricaldi",
@@ -113,23 +131,34 @@ const speakers: Speaker[] = [
     topic: "Astrofísica e Cosmologia em ondas de rádio.",
     tag: "Astrofísica",
     curriculumUrl: "http://lattes.cnpq.br/0081051823749824",
-    imageRef: "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4731474T7",
+    imageRef:
+      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4731474T7",
   },
   {
     name: "Yutao Xing",
     affil: "UFF",
-    topic: "Aplicações de microscopia eletrônica de alta resolução: da física fundamental à ciência dos materiais.",
+    topic:
+      "Aplicações de microscopia eletrônica de alta resolução: da física fundamental à ciência dos materiais.",
     tag: "Matéria Condensada",
     curriculumUrl: "http://lattes.cnpq.br/5494495784747171",
-    imageRef: "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4133149A6",
+    imageRef:
+      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4133149A6",
   },
 ];
 
 const committeeMembers = [
   {
-    name: "??",
-    role: "??",
-    institution: "Ainda não há organizadores divulgados",
+    name: "Jaziel Goulart Coelho",
+    role: "Comunicação e Coodernação Geral",
+    institution: "UFES",
+    image:
+      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4139643T0",
+  },
+  {
+    name: "Júlio César Fabris",
+    role: "Comitê Científico",
+    institution: "UFES",
+    image: julioImg.src,
   },
 ];
 ---
@@ -156,8 +185,8 @@ const committeeMembers = [
               <span class="absolute top-2 right-2 px-2 py-1 bg-white text-slate-700 text-xs rounded font-medium">
                 {speaker.affil}
               </span>
-              <a 
-                href={speaker.curriculumUrl} 
+              <a
+                href={speaker.curriculumUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -190,12 +219,9 @@ const committeeMembers = [
         {
           committeeMembers.map((member, i) => (
             <div class="flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-lg">
-              <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
-                <span class="text-white font-semibold text-xs">
-                  {member.name.split(" ").slice(-1)[0][0]}
-                  {member.name.split(" ").slice(-2, -1)[0]?.[0]}
-                </span>
-              </div>
+              {/* <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0"> */}
+              <Avatar src={member.image} size={36} />
+              {/* </div> */}
               <div>
                 <p class="text-slate-900 text-sm font-medium">{member.name}</p>
                 <p class="text-slate-600 text-xs">{member.role}</p>
