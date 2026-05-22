@@ -1,7 +1,23 @@
 ---
 import { ExternalLink } from "@lucide/astro";
 import Avatar from "./Avatar.astro";
-import julioImg from "../assets/julio.png";
+
+import belichImg from "../assets/participants/belich.png";
+import earthalImg from "../assets/participants/earthal.png";
+import geandersonImg from "../assets/participants/geanderson.png";
+import giuseppeDitoImg from "../assets/participants/giuseppe-dito.png";
+import guilhermeLimaImg from "../assets/participants/guilherme-lima.png";
+import ivaGurgelImg from "../assets/participants/iva-gurgel.png";
+import jazielImg from "../assets/participants/jaziel.png";
+import jorgeImg from "../assets/participants/jorge.png";
+import julioImg from "../assets/participants/julio.png";
+import marceloSegattoImg from "../assets/participants/marcelo-segatto.png";
+import marcosMenezesImg from "../assets/participants/marcos-menezes.png";
+import marinoImg from "../assets/participants/marino.png";
+import ronaldoLobatoImg from "../assets/participants/ronaldo-lobato.png";
+import varandasImg from "../assets/participants/varandas.png";
+import williamImg from "../assets/participants/william.png";
+import xingImg from "../assets/participants/xing.png";
 
 interface Speaker {
   name: string;
@@ -20,8 +36,7 @@ const speakers: Speaker[] = [
       "Molecules and Materials in Quantum Theory: A Green-Theoretical Perspective.",
     tag: "Palestra Especial",
     curriculumUrl: "http://lattes.cnpq.br/0081051823749824",
-    imageRef:
-      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4488311J4",
+    imageRef: varandasImg.src,
   },
   {
     name: "Eduardo Marino",
@@ -29,8 +44,7 @@ const speakers: Speaker[] = [
     topic: "Teoria para a Supercondutividade de Alta Temperatura em Cupratos.",
     tag: "Teoria Quântica de Campos",
     curriculumUrl: "http://lattes.cnpq.br/4256849386217726",
-    imageRef:
-      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4783288H8",
+    imageRef: marinoImg.src,
   },
   {
     name: "Geanderson Carvalho",
@@ -39,8 +53,7 @@ const speakers: Speaker[] = [
       "Palestra de Divulgação Científica — A complexidade molecular do cosmos.",
     tag: "Divulgação Científica",
     curriculumUrl: "http://lattes.cnpq.br/1178544624232296",
-    imageRef:
-      "http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4412841Z5",
+    imageRef: geandersonImg.src,
   },
   {
     name: "Giuseppe Dito",
@@ -48,8 +61,7 @@ const speakers: Speaker[] = [
     topic: "Another view on quantization.",
     tag: "Palestra Plenária",
     curriculumUrl: "http://lattes.cnpq.br/7145763051036121",
-    imageRef:
-      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4368892A5",
+    imageRef: giuseppeDitoImg.src,
   },
   {
     name: "Guilherme Lima",
@@ -57,8 +69,7 @@ const speakers: Speaker[] = [
     topic: "Estrutura Eletrônica — pesquisas em física da matéria condensada.",
     tag: "Estrutura Eletrônica",
     curriculumUrl: "http://lattes.cnpq.br/5847088789120872",
-    imageRef:
-      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4550752E5",
+    imageRef: guilhermeLimaImg.src,
   },
   {
     name: "Humberto Belich",
@@ -66,8 +77,7 @@ const speakers: Speaker[] = [
     topic: "Transição de Fase e ruptura de Polímeros.",
     tag: "Teoria Quântica de Campos",
     curriculumUrl: "http://lattes.cnpq.br/3879935393431243",
-    imageRef:
-      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4798155Z5",
+    imageRef: belichImg.src,
   },
   {
     name: "Ivã Gurgel",
@@ -76,8 +86,7 @@ const speakers: Speaker[] = [
       "Ciência e Diplomacia: a postura internacionalista de Niels Bohr e o papel nas origens do CERN.",
     tag: "Ensino de Física",
     curriculumUrl: "http://lattes.cnpq.br/2315844649289135",
-    imageRef:
-      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4737960H7",
+    imageRef: ivaGurgelImg.src,
   },
   {
     name: "João Paulo Erthal",
@@ -85,8 +94,7 @@ const speakers: Speaker[] = [
     topic: "Prêmio Nobel de Física: potencialidades no ensino de Física.",
     tag: "Ensino de Física",
     curriculumUrl: "http://lattes.cnpq.br/4049290999036716",
-    imageRef:
-      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4777423Z6",
+    imageRef: earthalImg.src,
   },
   {
     name: "Jorge Luis Gonzalez",
@@ -95,7 +103,7 @@ const speakers: Speaker[] = [
       "Uma abordagem para computação neuromórfica usando materiais quânticos.",
     tag: "Matéria Condensada",
     curriculumUrl: "https://orcid.org/0000-0001-5841-8731",
-    imageRef: "",
+    imageRef: jorgeImg.src,
   },
   {
     name: "Marcelo Segatto",
@@ -103,8 +111,7 @@ const speakers: Speaker[] = [
     topic: "Computação Quântica — avanços e perspectivas para o Brasil.",
     tag: "Palestra Plenária",
     curriculumUrl: "http://lattes.cnpq.br/2379169013108798",
-    imageRef:
-      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4723978Z8",
+    imageRef: marceloSegattoImg.src,
   },
   {
     name: "Marcos Gonçalves Menezes",
@@ -112,8 +119,7 @@ const speakers: Speaker[] = [
     topic: "Impulsionando a física de Floquet com campos excitônicos.",
     tag: "Estrutura Eletrônica",
     curriculumUrl: "http://lattes.cnpq.br/5945425658332294",
-    imageRef:
-      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4210227Y1",
+    imageRef: marcosMenezesImg.src,
   },
   {
     name: "Ronaldo Lobato",
@@ -122,8 +128,7 @@ const speakers: Speaker[] = [
       "Uma Rede Neural Bayesiana para a Equação de Estado de Estrelas de Nêutrons.",
     tag: "Astrofísica",
     curriculumUrl: "http://lattes.cnpq.br/6184225097118343",
-    imageRef:
-      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4434028A3",
+    imageRef: ronaldoLobatoImg.src,
   },
   {
     name: "Wiliam Ricaldi",
@@ -131,8 +136,7 @@ const speakers: Speaker[] = [
     topic: "Astrofísica e Cosmologia em ondas de rádio.",
     tag: "Astrofísica",
     curriculumUrl: "http://lattes.cnpq.br/0081051823749824",
-    imageRef:
-      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4731474T7",
+    imageRef: williamImg.src,
   },
   {
     name: "Yutao Xing",
@@ -141,8 +145,7 @@ const speakers: Speaker[] = [
       "Aplicações de microscopia eletrônica de alta resolução: da física fundamental à ciência dos materiais.",
     tag: "Matéria Condensada",
     curriculumUrl: "http://lattes.cnpq.br/5494495784747171",
-    imageRef:
-      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4133149A6",
+    imageRef: xingImg.src,
   },
 ];
 
@@ -151,8 +154,7 @@ const committeeMembers = [
     name: "Jaziel Goulart Coelho",
     role: "Comunicação e Coodernação Geral",
     institution: "UFES",
-    image:
-      "https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4139643T0",
+    image: jazielImg.src,
   },
   {
     name: "Júlio César Fabris",
