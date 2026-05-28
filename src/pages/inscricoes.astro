@@ -5,12 +5,12 @@ import RegistratinoSkeleton from "../components/RegistrationSkeleton.astro";
 import SponsorsSection from "../components/SponsorsSection.astro";
 import SponsorsBar from "../components/SponsorsBar.astro";
 
-const urlRegistration = import.meta.env.REGISTRATION_URL;
+const urlRegistration = import.meta.env.PUBLIC_REGISTRATION_URL;
 ---
 
 <Layout title="Inscrições – ECF/SBF 2026">
   {urlRegistration && <Registration />}
-  {!urlRegistration && <RegistratinoSkeleton/>}
+  {!urlRegistration && <RegistratinoSkeleton />}
   <SponsorsBar />
   <SponsorsSection />
 </Layout>
