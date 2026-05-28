@@ -28,7 +28,7 @@ jobs:
           npm install
           npm run build
         env:
-          REGISTRATION_URL: ${{ secrets.REGISTRATION_URL }}
+          PUBLIC_REGISTRATION_URL: ${{ secrets.PUBLIC_REGISTRATION_URL }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
