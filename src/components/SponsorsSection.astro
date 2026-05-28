@@ -4,40 +4,45 @@ import sbfLogo from "../assets/Logo-SBF60-small_1.png";
 import ifesLogo from "../assets/serra-vertical-cor.png";
 import ufesLogo from "../assets/Logo_Ufes.png";
 import govLogo from "../assets/Brasao_Governo.png";
+import sbfEsLogo from "../assets/logo-sbf-es.png";
+// import fapesLogo from "../assets/logo_fapes.png";
 
 const sponsors = [
   {
-    name: "Sociedade Brasileira de Física",
-    type: "Apoio",
-    color: "bg-blue-400",
-    image: sbfLogo,
-    alt: "logo_sbf",
+    name: "SBF - ES",
+    type: "Apoio Regional",
+    image: sbfEsLogo,
+    alt: "logo_sbf_es",
   },
   {
     name: "IFES",
     type: "Instituição Organizadora",
-    color: "bg-blue-600",
     image: ifesLogo,
     alt: "logo_ifes",
   },
   {
     name: "UFES",
     type: "Parceiro Institucional",
-    color: "bg-blue-500",
     image: ufesLogo,
     alt: "logo_ufes",
   },
   {
-    name: "Governo do ES",
+    name: "Sociedade Brasileira de Física",
     type: "Apoio",
-    color: "bg-slate-600",
-    image: govLogo,
-    alt: "logo_goves",
+    image: sbfLogo,
+    alt: "logo_sbf",
   },
+  { name: "Governo do ES", type: "Apoio", image: govLogo, alt: "logo_goves" },
+  //{
+  //  name: "FAPES",
+  //  type: "Apoio",
+  //  image: fapesLogo,
+  //  alt: "logo_fapes",
+  //},
 ];
 ---
 
-<section class="py-20 bg-slate-50">
+<footer class="py-12 bg-slate-50 border-t border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="text-center mb-12">
       <h2 class="text-slate-900 text-3xl font-bold mb-2">
@@ -46,15 +51,23 @@ const sponsors = [
       <p class="text-slate-600">Organizações que tornam este evento possível</p>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 items-center justify-items-center"
+    >
       {
         sponsors.map((sponsor) => (
-          <div class="flex flex-col items-center gap-3 p-6">
-            <Image src={sponsor.image} alt={sponsor.alt} />
+          <div
+            class="w-full flex justify-center p-6"
+            title={`${sponsor.name} - ${sponsor.type}`}
+          >
+            <Image
+              src={sponsor.image}
+              alt={sponsor.alt}
+              class="h-auto w-full max-h-48 object-contain"
+            />
           </div>
         ))
       }
     </div>
   </div>
-</section>
-
+</footer>

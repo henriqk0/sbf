@@ -7,7 +7,7 @@ import {
   FileText,
 } from "@lucide/astro";
 
-const base = import.meta.env.BASE_URL;
+const urlRegistration = import.meta.env.REGISTRATION_URL;
 
 const fees = [
   {
@@ -52,8 +52,8 @@ const fees = [
     <div class="mb-10">
       <h2 class="text-slate-900 text-3xl font-bold mb-2">Inscrições</h2>
       <p class="text-slate-600">
-        Inscrições até <strong>10 de julho de 2026</strong> • Vagas para Comunicação
-        Oral limitadas
+        Inscrições até <strong>25 de agosto de 2026</strong> • Vagas para Comunicação
+        Oral limitadas • Emissão de Certificados
       </p>
     </div>
 
@@ -74,7 +74,7 @@ const fees = [
       <ul class="space-y-2 text-sm text-slate-700 list-disc list-inside">
         <li>
           Preencha o formulário de inscrição abaixo. O pagamento da taxa deve
-          ser efetuado até <strong>10/07/2026</strong>.
+          ser efetuado até <strong>25/08/2026</strong>.
         </li>
         <li>
           Caso opte por <strong>Pôster ou Comunicação Oral</strong>, envie seu
@@ -82,7 +82,7 @@ const fees = [
           <a href="mailto:ecf.sbf@gmail.com" class="text-blue-600 font-medium"
             >ecf.sbf@gmail.com</a
           >
-          até <strong>10/07/2026</strong>, indicando claramente a modalidade
+          até <strong>25/08/2026</strong>, indicando claramente a modalidade
           desejada: <strong>Pôster</strong> ou <strong>Comunicação Oral</strong
           >.
         </li>
@@ -94,13 +94,22 @@ const fees = [
           Após a submissão do formulário, você receberá um e-mail com o valor da
           inscrição e as instruções de pagamento.
         </li>
+        <li>
+          A emissão de <strong>Certificados</strong> depende da <strong
+            >lista de presença</strong
+          >
+          ser assinada no local do evento pelo inscrito no <strong
+            >primeiro dia</strong
+          > de palestras.
+        </li>
       </ul>
     </div>
 
     <!-- CTA Button -->
     <div class="mb-10">
       <a
-        href={`${base}/inscricoes`}
+        href={urlRegistration}
+        target="_blank"
         class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold text-sm shadow-lg shadow-blue-300/40 transition-all duration-200 hover:-translate-y-0.5"
       >
         <ArrowRight class="w-4 h-4" />
@@ -202,7 +211,7 @@ const fees = [
             <a href="mailto:ecf.sbf@gmail.com" class="text-blue-600 font-medium"
               >ecf.sbf@gmail.com</a
             >
-            até <strong>10/07/2026</strong>
+            até <strong>25/08/2026</strong>
           </li>
           <li>
             Indique claramente no e-mail a modalidade: <strong>Pôster</strong> ou
@@ -219,7 +228,8 @@ const fees = [
           <li>
             Dúvidas? Entre em contato: <a
               href="mailto:ecf.sbf@gmail.com"
-              class="text-blue-600 font-medium">ecf.sbf@gmail.com</a>
+              class="text-blue-600 font-medium">ecf.sbf@gmail.com</a
+            >
           </li>
         </ul>
       </div>

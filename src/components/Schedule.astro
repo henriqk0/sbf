@@ -64,7 +64,7 @@ const schedule = [
       {
         time: "17:10",
         title: "Palestra",
-        speaker: "Guilherme Lima",
+        speaker: "Marcos Gonçalves Menezes: Impulsionando a física de Floquet com campos excitônicos",
         type: "talk",
         location: "Auditório Principal",
       },
@@ -179,7 +179,7 @@ const schedule = [
       {
         time: "14:00",
         title: "Palestra",
-        speaker: "Marcos Gonçalves Menezes: Impulsionando a física de Floquet com campos excitônicos",
+        speaker: "Guilherme Lima:  Modelagem computacional, construção e caracterização de sensores fotoacústicos para detecção de moléculas em níveis de traços",
         type: "talk",
         location: "Auditório Principal",
       },
@@ -220,6 +220,12 @@ const schedule = [
   },
 ];
 
+// Compute unique types per day
+const dayTypes = schedule.map((day) => {
+  const types = new Set(day.activities.map((a) => a.type));
+  return Array.from(types);
+});
+
 const typeConfig: Record<
   string,
   {
@@ -255,14 +261,6 @@ const typeConfig: Record<
     iconBg: "bg-emerald-500",
     label: "Intervalo",
   },
-  workshop: {
-    icon: "book",
-    color: "text-red-700",
-    bg: "bg-red-50",
-    borderColor: "border-l-red-500",
-    iconBg: "bg-red-500",
-    label: "Minicurso",
-  },
   poster: {
     icon: "users",
     color: "text-cyan-700",
@@ -270,14 +268,6 @@ const typeConfig: Record<
     borderColor: "border-l-cyan-500",
     iconBg: "bg-cyan-500",
     label: "Apresentação",
-  },
-  lab: {
-    icon: "flask",
-    color: "text-orange-700",
-    bg: "bg-orange-50",
-    borderColor: "border-l-orange-500",
-    iconBg: "bg-orange-500",
-    label: "Laboratório",
   },
   award: {
     icon: "award",
@@ -318,16 +308,20 @@ const typeConfig: Record<
       }
     </div>
 
-    <div class="flex flex-wrap gap-2 mb-8">
+    <div id="type-legend" class="flex flex-wrap gap-2 mb-8">
       {
-        Object.entries(typeConfig).map(([key, cfg]) => (
-          <span
-            class={`flex items-center gap-2 px-3 py-1.5 rounded-lg ${cfg.bg} border border-slate-200`}
-          >
-            <div class={`w-3 h-3 rounded ${cfg.iconBg}`} />
-            <span class={`text-xs font-medium ${cfg.color}`}>{cfg.label}</span>
-          </span>
-        ))
+        dayTypes[0].map((type) => {
+          const cfg = typeConfig[type];
+          return (
+            <span
+              data-type={type}
+              class={`flex items-center gap-2 px-3 py-1.5 rounded-lg ${cfg.bg} border border-slate-200 type-legend-item`}
+            >
+              <div class={`w-3 h-3 rounded ${cfg.iconBg}`} />
+              <span class={`text-xs font-medium ${cfg.color}`}>{cfg.label}</span>
+            </span>
+          );
+        })
       }
     </div>
 
@@ -343,7 +337,8 @@ const typeConfig: Record<
               const isBreak = activity.type === "break";
               return (
                 <div
-                  class={`flex gap-3 p-4 rounded-lg border-l-4 ${cfg.borderColor} border border-slate-200 ${cfg.bg} ${isBreak ? "opacity-60" : ""}`}
+                  data-type={activity.type}
+                  class={`schedule-item flex gap-3 p-4 rounded-lg border-l-4 ${cfg.borderColor} border border-slate-200 ${cfg.bg} ${isBreak ? "opacity-60" : ""}`}
                 >
                   <div class="flex-shrink-0 w-14">
                     <span
@@ -413,6 +408,74 @@ const typeConfig: Record<
 <script>
   const dayTabs = document.querySelectorAll(".day-tab");
   const dayContents = document.querySelectorAll(".day-content");
+  const typeLegend = document.getElementById("type-legend")!;
+
+  // Type config for legend updates
+  const typeConfigMap = {
+    opening: { bg: "bg-violet-50", bgActive: "bg-violet-100", iconBg: "bg-violet-500", color: "text-violet-700", colorActive: "text-violet-900", label: "Abertura" },
+    talk: { bg: "bg-blue-50", bgActive: "bg-blue-100", iconBg: "bg-blue-500", color: "text-blue-700", colorActive: "text-blue-900", label: "Palestra" },
+    break: { bg: "bg-emerald-50", bgActive: "bg-emerald-100", iconBg: "bg-emerald-500", color: "text-emerald-700", colorActive: "text-emerald-900", label: "Intervalo" },
+    poster: { bg: "bg-cyan-50", bgActive: "bg-cyan-100", iconBg: "bg-cyan-500", color: "text-cyan-700", colorActive: "text-cyan-900", label: "Apresentação" },
+    award: { bg: "bg-amber-50", bgActive: "bg-amber-100", iconBg: "bg-amber-500", color: "text-amber-700", colorActive: "text-amber-900", label: "Premiação" },
+    social: { bg: "bg-pink-50", bgActive: "bg-pink-100", iconBg: "bg-pink-500", color: "text-pink-700", colorActive: "text-pink-900", label: "Encerramento" }
+  } as const;
+
+  type EventType = keyof typeof typeConfigMap;
+
+  // Day types data embedded as JSON
+  const dayTypes: EventType[][] = [
+    ["opening", "talk", "break", "poster", "social"],
+    ["talk", "poster", "break", "award", "social"],
+    ["talk", "poster", "break", "social"]
+  ];
+
+  // Active type filters (can have multiple)
+  const activeFilters: Set<EventType> = new Set();
+  let currentDayIndex = 0;
+
+  function updateLegend(dayIndex: number) {
+    const types: EventType[] = dayTypes[dayIndex];
+    currentDayIndex = dayIndex;
+    typeLegend.innerHTML = types.map(type => {
+      const cfg = typeConfigMap[type];
+      const isActive = activeFilters.has(type);
+      const bgClass = isActive ? cfg.bgActive : cfg.bg;
+      const colorClass = isActive ? cfg.colorActive : cfg.color;
+      return `<button data-type="${type}" class="flex items-center gap-2 px-3 py-1.5 rounded-lg ${bgClass} border border-slate-200 type-legend-item transition-colors ${isActive ? 'ring-2 ring-offset-1 ring-' + cfg.iconBg.replace('bg-', '') : ''}">
+        <div class="w-3 h-3 rounded ${cfg.iconBg}"></div>
+        <span class="text-xs font-medium ${colorClass}">${cfg.label}</span>
+      </button>`;
+    }).join("");
+
+    // Re-attach click handlers
+    typeLegend.querySelectorAll(".type-legend-item").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const type = btn.getAttribute("data-type") as EventType;
+        if (activeFilters.has(type)) {
+          activeFilters.delete(type);
+        } else {
+          activeFilters.add(type);
+        }
+        updateLegend(currentDayIndex);
+        filterSchedule();
+      });
+    });
+  }
+
+  function filterSchedule() {
+    dayContents.forEach((content, idx) => {
+      if (idx !== currentDayIndex) return;
+      const items = content.querySelectorAll(".schedule-item");
+      items.forEach(item => {
+        const itemType = item.getAttribute("data-type") as EventType;
+        if (activeFilters.size === 0 || activeFilters.has(itemType)) {
+          item.classList.remove("hidden");
+        } else {
+          item.classList.add("hidden");
+        }
+      });
+    });
+  }
 
   dayTabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
@@ -430,6 +493,9 @@ const typeConfig: Record<
         `[data-day-content="${index}"]`,
       );
       activeContent?.classList.remove("hidden");
+
+      updateLegend(index);
+      filterSchedule();
     });
   });
 
@@ -442,4 +508,8 @@ const typeConfig: Record<
       "text-slate-600",
     );
   }
+
+  // Initialize legend with click handlers and filter
+  updateLegend(0);
+  filterSchedule();
 </script>
