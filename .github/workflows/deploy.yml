@@ -13,6 +13,7 @@ permissions:
 
 jobs:
   build:
+    if: github.repository == 'ifesserra-lab/sbf'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,12 +22,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: "22"
 
       - name: Install, build, and upload
         run: |
           npm install
           npm run build
+        env:
+          PUBLIC_REGISTRATION_URL: "https://forms.gle/owj7QWVkc5bkpEUN8"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
