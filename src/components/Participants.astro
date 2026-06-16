@@ -1,6 +1,5 @@
 ---
 import { ExternalLink } from "@lucide/astro";
-import Avatar from "./Avatar.astro";
 
 import belichImg from "../assets/participants/belich.png";
 import earthalImg from "../assets/participants/earthal.png";
@@ -64,7 +63,8 @@ const speakers: Speaker[] = [
   {
     name: "Guilherme Lima",
     affil: "UFES",
-    topic: "Modelagem computacional, construção e caracterização de sensores fotoacústicos para detecção de moléculas em níveis de traços.",
+    topic:
+      "Modelagem computacional, construção e caracterização de sensores fotoacústicos para detecção de moléculas em níveis de traços.",
     tag: "Estrutura Eletrônica",
     curriculumUrl: "http://lattes.cnpq.br/5847088789120872",
     imageRef: guilhermeLimaImg.src,
@@ -151,12 +151,12 @@ const committeeMembers = [
   {
     name: "Bruna Bragato",
     role: "Comitê Organizador",
-    institution: "UFES"
+    institution: "UFES",
   },
   {
     name: "Fabio Arthur Leão de Souza",
     role: "Comitê Organizador",
-    institution: "UFES"
+    institution: "UFES",
   },
   {
     name: "Fernando Néspoli Nassar Pansini",
@@ -176,39 +176,38 @@ const committeeMembers = [
   {
     name: "Leonardo Aguiar do Amaral",
     role: "Comitê Organizador",
-    institution: "IFES"
+    institution: "IFES",
   },
   {
     name: "Leonardo Matiazzi Corrêa",
     role: "Comitê Organizador",
-    institution: "IFES"
+    institution: "IFES",
   },
   {
     name: "Marta Amorim",
     role: "Comitê Organizador",
-    institution: "IFES"
+    institution: "IFES",
   },
   {
     name: "Paulo Sérgio dos Santos Júnior",
     role: "Comitê Organizador",
-    institution: "IFES"
-
+    institution: "IFES",
   },
   {
     name: "Rhayla Mendes",
     role: "Comitê Organizador",
-    institution: "UFES"
+    institution: "UFES",
   },
 
   {
     name: "Richard Junior Manuel Godinez Tello",
     role: "Comitê Organizador",
-    institution: "IFES"
+    institution: "IFES",
   },
   {
     name: "Stéfani Vitória Faller Ganda",
     role: "Comitê Organizador",
-    institution: "UFES"
+    institution: "UFES",
   },
   {
     name: "Wendel Silva Paz",
@@ -277,7 +276,9 @@ const committeeMembers = [
               {/* <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0"> */}
               {/* </div> */}
               <div>
-                <p class="text-slate-900 text-sm font-medium">{member.name} ({member.institution})</p>
+                <p class="text-slate-900 text-sm font-medium">
+                  {member.name} ({member.institution})
+                </p>
                 <p class="text-slate-600 text-xs">{member.role}</p>
               </div>
             </div>
